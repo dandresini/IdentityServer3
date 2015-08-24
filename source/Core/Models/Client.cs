@@ -204,6 +204,12 @@ namespace Thinktecture.IdentityServer.Core.Models
         /// </value>
         public List<string> AllowedCorsOrigins { get; set; }
 
+
+        ///<summary>
+        ///</summary>
+        public List<Providers> Social { get; set; }
+
+
         /// <summary>
         /// Creates a Client with default values
         /// </summary>
@@ -218,6 +224,8 @@ namespace Thinktecture.IdentityServer.Core.Models
             IdentityProviderRestrictions = new List<string>();
             CustomGrantTypeRestrictions = new List<string>();
             AllowedCorsOrigins = new List<string>();
+            Social = new List<Providers>();
+
 
             Enabled = true;
             EnableLocalLogin = true;

@@ -48,7 +48,7 @@ namespace Thinktecture.IdentityServer.Core.Services.Default
 
         public Task<AuthenticateResult> AuthenticateExternalAsync(ExternalIdentity externalUser, SignInMessage message)
         {
-            externalUser.Claims = filter.Filter(externalUser.Provider, externalUser.Claims);
+            if (externalUser.Claims !=null) externalUser.Claims = filter.Filter(externalUser.Provider, externalUser.Claims);
             return inner.AuthenticateExternalAsync(externalUser, message);
         }
 

@@ -46,8 +46,13 @@ namespace IdentityServer3.Core.Services.Default
 
         public Task AuthenticateExternalAsync(ExternalAuthenticationContext context)
         {
+<<<<<<< HEAD
+            if (externalUser.Claims !=null) externalUser.Claims = filter.Filter(externalUser.Provider, externalUser.Claims);
+            return inner.AuthenticateExternalAsync(externalUser, message);
+=======
             context.ExternalIdentity.Claims = filter.Filter(context.ExternalIdentity.Provider, context.ExternalIdentity.Claims);
             return inner.AuthenticateExternalAsync(context);
+>>>>>>> upstream/master
         }
 
         public Task PostAuthenticateAsync(PostAuthenticationContext context)
